@@ -50,7 +50,7 @@ a {
   text-transform: capitalize;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   cursor:pointer;
   background: transparent;
   outline: none;
@@ -60,6 +60,11 @@ a {
   margin: 10px 0px;
   border-radius: 20px;
   transition: all 0.3s ease;
+}
+
+.form_box{
+   width: 350px;
+   height: 350px;
 }
 
 @media screen and (max-width: 900px) {
@@ -85,4 +90,83 @@ a {
   .search-bar{
     width:200px;
   }
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+body{
+   width: 100%;
+   height: 100vh;
+}
+
+form input{
+  text-transform: capitalize;
+}
+
+.form_box form input{
+   width: 250px;
+}
+
+.form_box h4{
+   margin-bottom: 5px;
+}
+
+.form_box form button{
+  position: absolute;
+  top: 150px ;
+  left: 230px;
+}
+
+.profile_title{
+   font-size: 24px;
+}
+
+.main_profile{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   gap: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .search-bar{
+     width: 100px;
+  }
+
+  .Profile_img{
+     width: 30px;
+  }
+  .heading-Profile{
+     font-size: 16px;
+  }
+  .form_box{
+     width: 250px;
+     height: 250px;
+  }
+
+  .form_box form input{
+     width: 200px;
+  }
+
+  .form_box h4{
+     margin-bottom: 0px;
+  }
+
+  .form_box form button{
+    position: absolute;
+    top: 150px ;
+    left: 180px;
+  }
+
+  .profile_title{
+     font-size: 17px;
+  }
+
+  .main_profile{
+     gap: 0.3rem;
+  }
+
 }

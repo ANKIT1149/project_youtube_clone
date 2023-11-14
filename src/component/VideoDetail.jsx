@@ -3,9 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-
-import { Videos, Loader } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
+import Video from "./Video";
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -20,12 +19,13 @@ const VideoDetail = () => {
       .then((data) => setVideos(data.items))
   }, [id]);
 
-  if(!videoDetail?.snippet) return <Loader />;
+  if(!videoDetail?.snippet) return "Loading...."
 
   const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
+
   return (
-    <Box minHeight="95vh">
+    <Box height="auto">
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
           <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
@@ -52,7 +52,7 @@ const VideoDetail = () => {
           </Box>
         </Box>
         <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" >
-          <Videos videos={videos} direction="column" />
+          <Video videos={videos} direction="column" />
         </Box>
       </Stack>
     </Box>
